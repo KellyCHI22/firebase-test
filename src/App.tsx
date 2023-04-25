@@ -157,7 +157,14 @@ function App() {
       <br />
 
       <div>
-        <input type="file" onChange={(e) => setFileUpload(e.target.files[0])} />
+        <input
+          type="file"
+          onChange={(e) => {
+            if (e.target.files !== null) {
+              setFileUpload(e.target.files[0]);
+            }
+          }}
+        />
         <button onClick={uploadFile}>Upload File</button>
       </div>
     </div>
